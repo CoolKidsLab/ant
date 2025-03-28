@@ -18,7 +18,7 @@ services:
 
   frontend:
     build:
-      context: https://github.com/langmanus/langmanus-web.git#main
+      context: https://github.com/CoolKidsLabs/langmanus-web.git#main
       dockerfile: Dockerfile
       args:
         - NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
