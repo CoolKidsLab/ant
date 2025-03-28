@@ -1,5 +1,5 @@
 """
-FastAPI application for LangManus.
+FastAPI application for Ant.
 """
 
 import json
@@ -24,8 +24,8 @@ logger = logging.getLogger(__name__)
 
 # Create FastAPI app
 app = FastAPI(
-    title="LangManus API",
-    description="API for LangManus LangGraph-based agent workflow",
+    title="Ant API",
+    description="API for Ant LangGraph-based agent workflow",
     version="0.1.0",
 )
 
