@@ -49,7 +49,7 @@ export function InputBox({
 
   const saveConfig = useCallback(() => {
     localStorage.setItem(
-      "langmanus.config.inputbox",
+      "ant.config.inputbox",
       JSON.stringify({ deepThinkingMode, searchBeforePlanning }),
     );
   }, [deepThinkingMode, searchBeforePlanning]);
@@ -95,7 +95,7 @@ export function InputBox({
   );
 
   useEffect(() => {
-    const config = localStorage.getItem("langmanus.config.inputbox");
+    const config = localStorage.getItem("ant.config.inputbox");
     if (config) {
       const { deepThinkingMode, searchBeforePlanning } = JSON.parse(config);
       setDeepThinkMode(deepThinkingMode);

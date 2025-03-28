@@ -74,12 +74,12 @@ export default function HomePage() {
                 </h3>
                 <div className="px-4 text-center text-lg text-gray-400">
                   <a
-                    href="https://github.com/langmanus/langmanus"
+                    href="https://github.com/CoolKidsLabs/ant"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:text-blue-600"
                   >
-                    LangManus
+                    Ant
                   </a>
                   , built on cutting-edge language models, helps you search on
                   web, browse information, and handle complex tasks.

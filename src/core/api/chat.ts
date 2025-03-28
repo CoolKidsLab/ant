@@ -50,7 +50,7 @@ export async function queryTeamMembers() {
     ];
   } catch (err) {
     console.warn(
-      "🖐️️ [langmanus]\n\nError connecting to langmanus backend. Please ensure the latest version is running locally. See: https://github.com/langmanus/langmanus.\n\nRaw network error: ",
+      "🖐️️ [ant]\n\nError connecting to ant backend. Please ensure the latest version is running locally. See: https://github.com/CoolKidsLabs/ant.\n\nRaw network error: ",
     );
     console.error(err);
     return [];
