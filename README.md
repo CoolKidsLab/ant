@@ -1,30 +1,9 @@
-# 🦜🤖 LangManus
+# Ant
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![WeChat](https://img.shields.io/badge/WeChat-Langmanus-brightgreen?logo=wechat&logoColor=white)](./assets/wechat_community.jpg)
-[![Discord Follow](https://dcbadge.vercel.app/api/server/m3MszDcn?style=flat)](https://discord.gg/m3MszDcn)
 
-[English](./README.md) | [简体中文](./README_zh.md) | [日本語](./README_ja.md)
-
-> Come From Open Source, Back to Open Source
-
-LangManus is a community-driven AI automation framework that builds upon the incredible work of the open source community. Our goal is to combine language models with specialized tools for tasks like web search, crawling, and Python code execution, while giving back to the community that made this possible.
-
-## Demo
-
-**Task**: Calculate the influence index of DeepSeek R1 on HuggingFace. This index can be designed using a weighted sum of factors such as followers, downloads, and likes.
-
-**LangManus's Fully Automated Plan and Solution**:
-1. Gather the latest information about "DeepSeek R1", "HuggingFace", and related topics through online searches.
-2. Interact with a Chromium instance to visit the HuggingFace official website, search for "DeepSeek R1" and retrieve the latest data, including followers, likes, downloads, and other relevant metrics.
-3. Find formulas for calculating model influence using search engines and web scraping.
-4. Use Python to compute the influence index of DeepSeek R1 based on the collected data.
-5. Present a comprehensive report to the user.
-
-![Demo](./assets/demo.gif)
-
-- [View on YouTube](https://youtu.be/sZCHqrQBUGk)
+Ant is a community-driven AI automation framework that combines large language models with specialized tools for tasks like web search, crawling, and Python code execution.
 
 ## Table of Contents
 
@@ -32,7 +11,6 @@ LangManus is a community-driven AI automation framework that builds upon the inc
 - [Project Statement](#project-statement)
 - [Architecture](#architecture)
 - [Features](#features)
-- [Why LangManus?](#why-langmanus)
 - [Setup](#setup)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
@@ -50,8 +28,8 @@ LangManus is a community-driven AI automation framework that builds upon the inc
 
 ```bash
 # Clone the repository
-git clone https://github.com/langmanus/langmanus.git
-cd langmanus
+git clone https://github.com/CoolKidsLabs/ant.git
+cd ant
 
 # Install dependencies, uv will take care of the python interpreter and venv creation
 uv sync
@@ -68,33 +46,11 @@ cp .env.example .env
 uv run main.py
 ```
 
-## Project Statement
-
-This is an academically driven open-source project, developed by a group of former colleagues in our spare time. It aims to explore and exchange ideas in the fields of Multi-Agent and DeepResearch.
-
-- **Purpose**: The primary purpose of this project is academic research, participation in the GAIA leaderboard, and the future publication of related papers.
-- **Independence Statement**: This project is entirely independent and unrelated to our primary job responsibilities. It does not represent the views or positions of our employers or any organizations.
-- **No Association**: This project has no association with Manus (whether it refers to a company, organization, or any other entity).
-- **Clarification Statement**: We have not promoted this project on any social media platforms. Any inaccurate reports related to this project are not aligned with its academic spirit.
-- **Contribution Management**: Issues and PRs will be addressed during our free time and may experience delays. We appreciate your understanding.
-- **Disclaimer**: This project is open-sourced under the MIT License. Users assume all risks associated with its use. We disclaim any responsibility for any direct or indirect consequences arising from the use of this project.
-
-## 项目声明
-
-本项目是一个学术驱动的开源项目，由一群前同事在业余时间开发，旨在探索和交流 Multi-Agent 和 DeepResearch 相关领域的技术。
-
-- **项目目的**：本项目的主要目的是学术研究、参与 GAIA 排行榜，并计划在未来发表相关论文。
-- **独立性声明**：本项目完全独立，与我们的本职工作无关，不代表我们所在公司或任何组织的立场或观点。
-- **无关联声明**：本项目与 Manus（无论是公司、组织还是其他实体）无任何关联。
-- **澄清声明**：我们未在任何社交媒体平台上宣传过本项目，任何与本项目相关的不实报道均与本项目的学术精神无关。
-- **贡献管理**：Issue 和 PR 将在我们空闲时间处理，可能存在延迟，敬请谅解。
-- **免责声明**：本项目基于 MIT 协议开源，使用者需自行承担使用风险。我们对因使用本项目产生的任何直接或间接后果不承担责任。
-
 ## Architecture
 
-LangManus implements a hierarchical multi-agent system where a supervisor coordinates specialized agents to accomplish complex tasks:
+Ant implements a hierarchical multi-agent system where a supervisor coordinates specialized agents to accomplish complex tasks:
 
-![LangManus Architecture](./assets/architecture.png)
+![Ant Architecture](./assets/architecture.png)
 
 The system consists of the following agents working together:
 
@@ -137,18 +93,6 @@ The system consists of the following agents working together:
     - Multi-agent orchestration
     - Task delegation and monitoring
 
-## Why LangManus?
-
-We believe in the power of open source collaboration. This project wouldn't be possible without the amazing work of projects like:
-
-- [Qwen](https://github.com/QwenLM/Qwen) for their open source LLMs
-- [Tavily](https://tavily.com/) for search capabilities
-- [Jina](https://jina.ai/) for crawl search technology
-- [Browser-use](https://pypi.org/project/browser-use/) for control browser
-- And many other open source contributors
-
-We're committed to giving back to the community and welcome contributions of all kinds - whether it's code, documentation, bug reports, or feature suggestions.
-
 ## Setup
 
 ### Prerequisites
@@ -157,7 +101,7 @@ We're committed to giving back to the community and welcome contributions of all
 
 ### Installation
 
-LangManus leverages [uv](https://github.com/astral-sh/uv) as its package manager to streamline dependency management.
+Ant leverages [uv](https://github.com/astral-sh/uv) as its package manager to streamline dependency management.
 Follow the steps below to set up a virtual environment and install the necessary dependencies:
 
 ```bash
@@ -175,52 +119,7 @@ By completing these steps, you'll ensure your environment is properly configured
 
 ### Configuration
 
-LangManus uses a three-layer LLM system, which are respectively used for reasoning, basic tasks, and vision-language tasks. Configuration is done using the `conf.yaml` file in the root directory of the project. You can copy `conf.yaml.example` to `conf.yaml` to start the configuration:
-```bash
-cp conf.yaml.example conf.yaml
-```
-
-```yaml
-# Setting it to true will read the conf.yaml configuration, and setting it to false will use the original .env configuration. The default is false (compatible with existing configurations)
-USE_CONF: true
-
-# LLM Config
-## Follow the litellm configuration parameters: https://docs.litellm.ai/docs/providers. You can click on the specific provider document to view the completion parameter examples
-REASONING_MODEL:
-  model: "volcengine/ep-xxxx"
-  api_key: $REASONING_API_KEY # Supports referencing the environment variable ENV_KEY in the.env file through $ENV_KEY
-  api_base: $REASONING_BASE_URL
-
-BASIC_MODEL:
-  model: "azure/gpt-4o-2024-08-06"
-  api_base: $AZURE_API_BASE
-  api_version: $AZURE_API_VERSION
-  api_key: $AZURE_API_KEY
-
-VISION_MODEL:
-  model: "azure/gpt-4o-2024-08-06"
-  api_base: $AZURE_API_BASE
-  api_version: $AZURE_API_VERSION
-  api_key: $AZURE_API_KEY
-```
-
-You can create a .env file in the root directory of the project and configure the following environment variables. You can copy the.env.example file as a template to start:
-```bash
-cp .env.example .env
-```
-```ini
-# Tool API Key
-TAVILY_API_KEY=your_tavily_api_key
-JINA_API_KEY=your_jina_api_key  # Optional
-
-# Browser Configuration
-CHROME_INSTANCE_PATH=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome  # Optional, the path to the Chrome executable file
-CHROME_HEADLESS=False  # Optional, the default is False
-CHROME_PROXY_SERVER=http://127.0.0.1:10809  # Optional, the default is None
-CHROME_PROXY_USERNAME=  # Optional, the default is None
-CHROME_PROXY_PASSWORD=  # Optional, the default is None
-```
-
+tbd
 
 > **Note:**
 >
@@ -234,7 +133,7 @@ CHROME_PROXY_PASSWORD=  # Optional, the default is None
 
 ### Configure Pre-commit Hook
 
-LangManus includes a pre-commit hook that runs linting and formatting checks before each commit. To set it up:
+Ant includes a pre-commit hook that runs linting and formatting checks before each commit. To set it up:
 
 1. Make the pre-commit script executable:
 
@@ -259,7 +158,7 @@ The pre-commit hook will automatically:
 
 ### Basic Execution
 
-To run LangManus with default settings:
+To run Ant with default settings:
 
 ```bash
 uv run main.py
@@ -267,7 +166,7 @@ uv run main.py
 
 ### API Server
 
-LangManus provides a FastAPI-based API server with streaming support:
+Ant provides a FastAPI-based API server with streaming support:
 
 ```bash
 # Start the API server
@@ -291,7 +190,7 @@ The API server exposes the following endpoints:
 
 ### Advanced Configuration
 
-LangManus can be customized through various configuration files in the `src/config` directory:
+Ant can be customized through various configuration files in the `src/config` directory:
 
 - `env.py`: Configure LLM models, API keys, and base URLs
 - `tools.py`: Adjust tool-specific settings (e.g., Tavily search results limit)
@@ -299,7 +198,7 @@ LangManus can be customized through various configuration files in the `src/conf
 
 ### Agent Prompts System
 
-LangManus uses a sophisticated prompting system in the `src/prompts` directory to define agent behaviors and responsibilities:
+Ant uses a sophisticated prompting system in the `src/prompts` directory to define agent behaviors and responsibilities:
 
 #### Core Agent Roles
 
@@ -332,31 +231,31 @@ Each agent's prompt is defined in a separate markdown file, making it easy to mo
 
 ## Docker
 
-LangManus can be run in a Docker container. default serve api on port 8000.
+Ant can be run in a Docker container. default serve api on port 8000.
 
 Before run docker, you need to prepare environment variables in `.env` file.
 
 ```bash
-docker build -t langmanus .
-docker run --name langmanus -d --env-file .env -e CHROME_HEADLESS=True -p 8000:8000 langmanus
+docker build -t ant .
+docker run --name ant -d --env-file .env -e CHROME_HEADLESS=True -p 8000:8000 ant
 ```
 
 You can also just run the cli with docker.
 
 ```bash
-docker build -t langmanus .
-docker run --rm -it --env-file .env -e CHROME_HEADLESS=True langmanus uv run python main.py
+docker build -t ant .
+docker run --rm -it --env-file .env -e CHROME_HEADLESS=True ant uv run python main.py
 ```
 
 ## Web UI
 
-LangManus provides a default web UI.
+Ant provides a default web UI.
 
-Please refer to the [langmanus/langmanus-web-ui](https://github.com/langmanus/langmanus-web) project for more details.
+Please refer to the [CoolKidsLabs/ant-web](https://github.com/CoolKidsLabs/ant-web) project for more details.
 
 ## Docker Compose (include both backend and frontend)
 
-LangManus provides a docker-compose setup to easily run both the backend and frontend together:
+Ant provides a docker-compose setup to easily run both the backend and frontend together:
 
 ```bash
 # Start both backend and frontend
@@ -367,8 +266,8 @@ docker-compose up -d
 ```
 
 This will:
-1. Build and start the LangManus backend container
-2. Build and start the LangManus web UI container
+1. Build and start the Ant backend container
+2. Build and start the Ant web UI container
 3. Connect them using a shared network
 
 ** Make sure you have your `.env` file prepared with the necessary API keys before starting the services. **
@@ -412,17 +311,13 @@ We welcome contributions of all kinds! Whether you're fixing a typo, improving d
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=langmanus/langmanus&type=Date)](https://www.star-history.com/#langmanus/langmanus&Date)
-
 ## Acknowledgments
 
-Special thanks to all the open source projects and contributors that make LangManus possible. We stand on the shoulders of giants.
+Special thanks to all the open source projects and contributors that make Ant possible. We stand on the shoulders of giants.
 
 In particular, we want to express our deep appreciation for:
 - [LangChain](https://github.com/langchain-ai/langchain) for their exceptional framework that powers our LLM interactions and chains
 - [LangGraph](https://github.com/langchain-ai/langgraph) for enabling our sophisticated multi-agent orchestration
 - [Browser-use](https://pypi.org/project/browser-use/) for control browser
 
-These amazing projects form the foundation of LangManus and demonstrate the power of open source collaboration.
+These amazing projects form the foundation of Ant and demonstrate the power of open source collaboration.
