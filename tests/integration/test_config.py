@@ -15,7 +15,7 @@ from src.llms.llm import (
 
 @pytest.fixture(autouse=True)
 def clear_llm_cache():
-    """清空LLM缓存"""
+    """Clear LLM cache"""
     from src.llms.llm import _llm_cache
 
     _llm_cache.clear()

@@ -9,9 +9,9 @@ def test_team_member_config_structure():
 
     for member in TEAM_MEMBERS:
         config = TEAM_MEMBER_CONFIGRATIONS[member]
-        # 检查所有必需的键是否存在
+        # Check if all required keys exist
         assert all(key in config for key in required_keys)
-        # 检查值的类型
+        # Check value types
         assert isinstance(config["name"], str)
         assert isinstance(config["desc"], str)
         assert isinstance(config["desc_for_llm"], str)
@@ -20,7 +20,7 @@ def test_team_member_config_structure():
 
 def test_desc_for_llm_content():
     """Test the content of desc_for_llm for each team member"""
-    # 测试每个成员的 desc_for_llm 是否包含必要的关键信息
+    # Test if desc_for_llm for each member contains necessary key information
     researcher_desc = TEAM_MEMBER_CONFIGRATIONS["researcher"]["desc_for_llm"]
     assert "search engines" in researcher_desc.lower()
     assert "web crawlers" in researcher_desc.lower()
@@ -47,20 +47,20 @@ def test_template_desc_for_llm_rendering():
         "workspace_context": "test context",
     }
 
-    # 测试 planner 模板
+    # Test planner template
     planner_messages = apply_prompt_template("planner", test_state)
     planner_content = planner_messages[0]["content"]
 
-    # 检查是否所有成员的 desc_for_llm 都被正确渲染到模板中
+    # Check if all members' desc_for_llm are correctly rendered in the template
     for member in TEAM_MEMBERS:
         desc = TEAM_MEMBER_CONFIGRATIONS[member]["desc_for_llm"]
         assert desc in planner_content
 
-    # 测试 supervisor 模板
+    # Test supervisor template
     supervisor_messages = apply_prompt_template("supervisor", test_state)
     supervisor_content = supervisor_messages[0]["content"]
 
-    # 检查是否所有成员的 desc_for_llm 都被正确渲染到模板中
+    # Check if all members' desc_for_llm are correctly rendered in the template
     for member in TEAM_MEMBERS:
         desc = TEAM_MEMBER_CONFIGRATIONS[member]["desc_for_llm"]
         assert desc in supervisor_content
@@ -80,10 +80,10 @@ def test_template_format_after_desc_for_llm(template_name):
     messages = apply_prompt_template(template_name, test_state)
     content = messages[0]["content"]
 
-    # 检查基本格式是否保持正确
-    assert "---" in content  # 检查 frontmatter
+    # Check if basic format remains correct
+    assert "---" in content  # Check frontmatter
     assert "CURRENT_TIME:" in content
 
-    # 检查团队成员列表格式
+    # Check team member list format
     for member in TEAM_MEMBERS:
-        assert f"**`{member}`**:" in content  # 检查成员标题格式
+        assert f"**`{member}`**:" in content  # Check member title format
