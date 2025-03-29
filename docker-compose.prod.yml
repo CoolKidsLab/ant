@@ -1,0 +1,57 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ant-backend
+    environment:
+      - CHROME_HEADLESS=True
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - ant-network
+
+  frontend:
+    build:
+      context: https://github.com/CoolKidsLabs/ant-web.git#main
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=https://moochee.us/api
+    container_name: ant-frontend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - ant-network
+
+  proxy:
+    image: caddy:2-alpine
+    ports:
+      # Map host ports 80/443 to container ports 80/443
+      - "80:80"
+      - "443:443"
+      # Caddy might need UDP 443 for HTTP/3
+      - "443:443/udp"
+    volumes:
+      # Mount the Caddyfile configuration
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile
+      # Mount volumes for Caddy's state (certificates, etc.) to persist them
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - ant-network
+    depends_on:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+networks:
+  ant-network:
+    driver: bridge
+
+volumes:
+  caddy_data: # Persists SSL certificates and other Caddy data
+  caddy_config: # Persists Caddy config state
