@@ -259,7 +259,7 @@ Ant provides a docker-compose setup to easily run both the backend and frontend 
 
 ```bash
 # Start both backend and frontend
-docker-compose up -d
+docker compose -f docker-compose.dev.yml up -d
 
 # The backend will be available at http://localhost:8000
 # The frontend will be available at http://localhost:3000, which could be accessed through web browser
