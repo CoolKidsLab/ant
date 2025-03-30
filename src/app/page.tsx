@@ -47,7 +47,11 @@ export default function HomePage() {
 
   return (
     <TooltipProvider delayDuration={150}>
-      <ScrollArea className="h-screen w-full" ref={scrollAreaRef}>
+      <ScrollArea 
+        className="min-h-screen w-full" 
+        ref={scrollAreaRef}
+        type="auto"
+      >
         <div className="flex min-h-screen flex-col items-center">
           <header className="sticky top-0 right-0 left-0 z-10 flex h-16 w-full items-center px-4 backdrop-blur-sm">
             <AppHeader />
