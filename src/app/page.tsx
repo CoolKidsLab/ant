@@ -54,25 +54,25 @@ export default function HomePage() {
           </header>
           <main className="w-full flex-1 px-4 pb-48">
             <MessageHistoryView
-              className="w-page mx-auto"
+              className="mx-auto w-full max-w-[800px]"
               messages={messages}
               loading={responding}
             />
           </main>
           <footer
             className={cn(
-              "fixed bottom-4 transition-transform duration-500 ease-in-out",
+              "fixed bottom-4 mx-auto w-full px-4 transition-transform duration-500 ease-in-out",
               messages.length === 0
-                ? "w-[640px] translate-y-[-34vh]"
-                : "w-page",
+                ? "max-w-[640px] translate-y-[-34vh]"
+                : "max-w-[800px]",
             )}
           >
             {messages.length === 0 && (
-              <div className="flex w-[640px] translate-y-[-32px] flex-col">
-                <h3 className="mb-2 text-center text-3xl font-medium">
+              <div className="flex w-full flex-col px-4 md:w-[640px] md:translate-y-[-32px]">
+                <h3 className="mb-2 text-center text-2xl font-medium md:text-3xl">
                   👋 Hello, there!
                 </h3>
-                <div className="px-4 text-center text-lg text-gray-400">
+                <div className="px-2 text-center text-base text-gray-400 md:text-lg">
                   <a
                     href="https://github.com/CoolKidsLabs/ant"
                     target="_blank"
@@ -97,7 +97,7 @@ export default function HomePage() {
                 }}
               />
             </div>
-            <div className="w-page absolute bottom-[-32px] h-8 backdrop-blur-xs" />
+            <div className="absolute bottom-[-32px] h-8 w-full backdrop-blur-xs" />
           </footer>
         </div>
       </ScrollArea>
