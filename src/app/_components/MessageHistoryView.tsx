@@ -16,7 +16,7 @@ export function MessageHistoryView({
   loading?: boolean;
 }) {
   return (
-    <div className={cn(className)}>
+    <div className={cn("space-y-4", className)}>
       {messages.map((message) => (
         <MessageView key={message.id} message={message} />
       ))}
@@ -31,7 +31,8 @@ function MessageView({ message }: { message: Message }) {
       <div className={cn("flex", message.role === "user" && "justify-end")}>
         <div
           className={cn(
-            "relative mb-8 w-fit max-w-[560px] rounded-2xl px-4 py-3 shadow-xs",
+            "relative mb-8 w-fit rounded-2xl px-3 py-2.5 shadow-xs md:max-w-[560px] md:px-4 md:py-3",
+            "max-w-[85%] text-sm md:text-base", // Added responsive width and text size
             message.role === "user" && "rounded-ee-none bg-blue-500 text-white",
             message.role === "assistant" && "rounded-es-none bg-white",
           )}
@@ -39,9 +40,19 @@ function MessageView({ message }: { message: Message }) {
           <Markdown
             components={{
               a: ({ href, children }) => (
-                <a href={href} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="break-words" // Added word breaking for links
+                >
                   {children}
                 </a>
+              ),
+              p: ({ children }) => (
+                <p className="break-words">
+                  {children}
+                </p>
               ),
             }}
           >
