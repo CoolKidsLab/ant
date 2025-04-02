@@ -37,7 +37,7 @@ export function WorkflowProgressView({
   const blockRef = useRef<HTMLDivElement>(null);
 
   const [isExpanded, setIsExpanded] = useState(false);
-  const [blockWidth, setBlockWidth] = useState(928);
+  const [blockWidth, setBlockWidth] = useState(800);
   const [blockHeight, setBlockHeight] = useState(400);
 
   const steps = useMemo(() => {
@@ -60,7 +60,7 @@ export function WorkflowProgressView({
         });
       }
     } else {
-      setBlockWidth(928);
+      setBlockWidth(800);
       setBlockHeight(400);
     }
   }, [isExpanded]);
