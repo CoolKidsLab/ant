@@ -79,7 +79,7 @@ export function WorkflowProgressView({
           height: blockHeight,
         }}
       >
-        <aside className="relative flex w-[220px] shrink-0 flex-col border-r bg-[rgba(0,0,0,0.02)]">
+        <aside className="relative flex w-[150px] shrink-0 flex-col border-r bg-[rgba(0,0,0,0.02)] text-sm">
           <div className="shrink-0 px-4 py-4 font-medium">Flow</div>
           <ol className="flex grow list-disc flex-col gap-4 px-4 py-2">
             {steps.map((step) => (
@@ -260,7 +260,7 @@ function getStepName(step: WorkflowStep) {
     case "coder":
       return "Coding";
     case "file_manager":
-      return "File Management";
+      return "Managing Files";
     case "planner":
       return "Planning";
     case "researcher":
