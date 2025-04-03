@@ -15,6 +15,7 @@ static/browser_history/*.gif
 # Environment variables
 .env
 .env.qwen
+.env.gemini
 
 # user conf
 conf.yaml
