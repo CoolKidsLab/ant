@@ -5,7 +5,7 @@ import {
 } from "@ant-design/icons";
 import { type KeyboardEvent, useCallback, useEffect, useState } from "react";
 
-import { Button } from "~/components/ui/button";
+import { Button } from "frontend/src/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -13,15 +13,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
+} from "frontend/src/components/ui/dropdown-menu";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "~/components/ui/tooltip";
-import { Atom } from "~/core/icons";
-import { setEnabledTeamMembers, useStore } from "~/core/store";
-import { cn } from "~/core/utils";
+} from "frontend/src/components/ui/tooltip";
+import { Atom } from "frontend/src/core/icons";
+import { setEnabledTeamMembers, useStore } from "frontend/src/core/store";
+import { cn } from "frontend/src/core/utils";
 
 export function InputBox({
   className,

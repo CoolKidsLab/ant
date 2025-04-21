@@ -1,4 +1,4 @@
-import { cn } from "~/core/utils";
+import { cn } from "frontend/src/core/utils";
 
 import styles from "./LoadingAnimation.module.css";
 

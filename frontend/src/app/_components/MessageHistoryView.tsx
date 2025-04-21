@@ -1,7 +1,7 @@
 import Markdown from "react-markdown";
 
-import { type Message } from "~/core/messaging";
-import { cn } from "~/core/utils";
+import { type Message } from "frontend/src/core/messaging";
+import { cn } from "frontend/src/core/utils";
 
 import { LoadingAnimation } from "./LoadingAnimation";
 import { WorkflowProgressView } from "./WorkflowProgressView";

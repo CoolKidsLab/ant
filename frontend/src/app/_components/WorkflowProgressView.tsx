@@ -2,26 +2,26 @@ import { CompressOutlined, ExpandOutlined } from "@ant-design/icons";
 import { parse } from "best-effort-json-parser";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { useAutoScrollToBottom } from "~/components/hooks/useAutoScrollToBottom";
-import { useOnStateChangeEffect } from "~/components/hooks/useOnStateChangeEffect";
+import { useAutoScrollToBottom } from "frontend/src/components/hooks/useAutoScrollToBottom";
+import { useOnStateChangeEffect } from "frontend/src/components/hooks/useOnStateChangeEffect";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "~/components/ui/accordion";
+} from "frontend/src/components/ui/accordion";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "~/components/ui/tooltip";
-import { Atom } from "~/core/icons";
-import { cn } from "~/core/utils";
+} from "frontend/src/components/ui/tooltip";
+import { Atom } from "frontend/src/core/icons";
+import { cn } from "frontend/src/core/utils";
 import {
   type ThinkingTask,
   type Workflow,
   type WorkflowStep,
-} from "~/core/workflow";
+} from "frontend/src/core/workflow";
 
 import { Markdown } from "./Markdown";
 import { ToolCallView } from "./ToolCallView";

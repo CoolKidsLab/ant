@@ -8,13 +8,13 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 
-import { Button } from "~/components/ui/button";
+import { Button } from "frontend/src/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "~/components/ui/tooltip";
-import { cn } from "~/core/utils";
+} from "frontend/src/components/ui/tooltip";
+import { cn } from "frontend/src/core/utils";
 
 export function Markdown({
   className,

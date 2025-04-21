@@ -1,4 +1,4 @@
-import { env } from "~/env";
+import { env } from "frontend/src/env";
 
 import { type Message } from "../messaging";
 import { fetchStream } from "../sse";
