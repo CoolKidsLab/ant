@@ -1,26 +1,27 @@
 services:
   backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
-    container_name: ant-backend
+      target: production
+    container_name: ant-backend-prod
     environment:
       - CHROME_HEADLESS=True
     env_file:
-      - .env
-    restart: unless-stopped
+      - ./backend/.env
+    restart: always
     networks:
       - ant-network
 
   frontend:
     build:
-      context: https://github.com/CoolKidsLabs/ant-web.git#main
+      context: ./frontend
       dockerfile: Dockerfile
-      args:
-        - NEXT_PUBLIC_API_URL=https://moochee.us/api
-    container_name: ant-frontend
+      target: production
+    container_name: ant-frontend-prod
     environment:
-      - NEXT_PUBLIC_API_URL=http://backend:8000
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://ant-backend-prod:8000/api
     depends_on:
       - backend
     restart: unless-stopped

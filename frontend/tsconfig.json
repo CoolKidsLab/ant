@@ -26,11 +26,11 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "~/*": ["frontend/src/*"]
+      "~/*": ["src/*"]
     }
   },
   "include": [
-    "frontend/.eslintrc.cjs",
+    ".eslintrc.cjs",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

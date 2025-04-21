@@ -3,11 +3,11 @@
 import { nanoid } from "nanoid";
 import { useCallback, useRef } from "react";
 
-import { useAutoScrollToBottom } from "frontend/src/components/hooks/useAutoScrollToBottom";
-import { ScrollArea } from "frontend/src/components/ui/scroll-area";
-import { TooltipProvider } from "frontend/src/components/ui/tooltip";
-import { sendMessage, useInitTeamMembers, useStore } from "frontend/src/core/store";
-import { cn } from "frontend/src/core/utils";
+import { useAutoScrollToBottom } from "src/components/hooks/useAutoScrollToBottom";
+import { ScrollArea } from "src/components/ui/scroll-area";
+import { TooltipProvider } from "src/components/ui/tooltip";
+import { sendMessage, useInitTeamMembers, useStore } from "src/core/store";
+import { cn } from "src/core/utils";
 
 import { AppHeader } from "./_components/AppHeader";
 import { InputBox } from "./_components/InputBox";

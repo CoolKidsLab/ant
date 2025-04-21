@@ -9,7 +9,7 @@ import { useMemo } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { type ToolCallTask } from "frontend/src/core/workflow";
+import { type ToolCallTask } from "src/core/workflow";
 
 export function ToolCallView({ task }: { task: ToolCallTask }) {
   if (task.payload.toolName === "tavily_search") {
