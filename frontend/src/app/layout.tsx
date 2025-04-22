@@ -1,5 +1,6 @@
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 
 import "~/styles/globals.css";
 
@@ -15,7 +16,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="bg-body flex min-h-screen min-w-screen">{children}</body>
+      <body className="bg-body flex min-h-screen min-w-screen">
+        <SessionProvider>{children}</SessionProvider>
+      </body>
     </html>
   );
 }

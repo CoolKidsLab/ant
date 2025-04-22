@@ -10,8 +10,12 @@ moochee.us {
 
     # Optional: If you want to route specific API paths directly to the backend
     # (Usually better to let Next.js proxy API requests if using getServerSideProps/API Routes)
+    route /api/auth/* {
+       reverse_proxy frontend:3000
+    }
+
     route /api/* {
-       reverse_proxy backend:8000
+        reverse_proxy backend:8000
     }
 
     # Recommended headers for security
