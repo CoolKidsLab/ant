@@ -1,24 +1,30 @@
 # Ensure you have an A record pointing yourdomain.com to your server's public IP.
-# Caddy will automatically provision and renew Let's Encrypt certificates. 
+# Caddy will automatically provision and renew Let's Encrypt certificates.
 moochee.us {
     # Enable compression
     encode gzip
 
-    # Route requests to the Next.js frontend service (running on port 3000 internally)
-    # Caddy handles adding necessary proxy headers
-    reverse_proxy frontend:3000
+    # --- Routing Logic ---
+    # IMPORTANT: Order matters here. More specific routes come first.
 
-    # Optional: If you want to route specific API paths directly to the backend
-    # (Usually better to let Next.js proxy API requests if using getServerSideProps/API Routes)
+    # 1. Route /api/auth/* requests to the Next.js frontend
+    #    This handles NextAuth routes.
     route /api/auth/* {
        reverse_proxy frontend:3000
     }
 
+    # 2. Route other /api/* requests to the Python backend
+    #    This handles your custom backend API endpoints.
     route /api/* {
         reverse_proxy backend:8000
     }
 
-    # Recommended headers for security
+    # 3. Fallback: Route all other requests (/, /about, etc.) to the Next.js frontend
+    #    This serves the main application UI.
+    reverse_proxy frontend:3000
+
+    # --- Security Headers ---
+    # (Keep your existing security headers)
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
         X-Content-Type-Options "nosniff"
@@ -31,6 +37,6 @@ moochee.us {
 }
 
 # Optional: Redirect www to non-www (or vice-versa)
-# www.yourdomain.com {
-#    redir https://yourdomain.com{uri} permanent
+# www.moochee.us {
+#    redir https://moochee.us{uri} permanent
 # }
