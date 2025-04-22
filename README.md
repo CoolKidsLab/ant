@@ -20,18 +20,22 @@ Ant is a community-driven AI automation framework that combines large language m
 ### Development
 
 1. Clone the repository
-2. Run the development environment:
+2. Configure ./backend/.env
+3. Run the development environment:
    ```bash
-   docker-compose -f docker-compose.dev.yml up
+   docker compose -f docker-compose.dev.yml up
    ```
-3. Access the application at `http://localhost:3000`
+4. Access the application at `http://localhost:3000`
 
 ### Production
 
-To deploy the production environment:
+1. Clone the repository
+2. Configure ./backend/.env and ./frontend/.env
+3. Deploy the production environment:
 ```bash
-docker-compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml up -d
 ```
+4. Access the application at `https://moochee.us`
 
 ## License
 
