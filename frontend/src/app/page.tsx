@@ -77,7 +77,7 @@ export default function HomePage() {
             {messages.length === 0 && (
               <div className="flex w-full flex-col px-4 md:w-[640px] md:translate-y-[-32px]">
                 <h3 className="mb-2 text-center text-2xl font-medium md:text-3xl">
-                  👋 Hello, {session?.user?.name?.split(' ')[0] || 'there'}!
+                  👋 Hello, {session?.user?.name?.split(' ')[0] ?? 'there'}!
                 </h3>
                 <div className="px-2 text-center text-base text-gray-400 md:text-lg">
                   <a
